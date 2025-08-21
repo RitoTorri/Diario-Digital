@@ -1,0 +1,5 @@
+# No se debe subir el archivo node_modules
+node_modules
+
+# No se debe subir el archivo .env
+.env

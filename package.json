@@ -1,0 +1,30 @@
+{
+  "name": "blog-",
+  "version": "1.0.0",
+  "description": "Esta es un proyecto donde tu podrás subir tus ideas, pensamientos, imágenes, etc..\r *Aqui esta el link de la planeacion del proyecto:* https://docs.google.com/document/d/1zStfino5uCYaztrAtqUE3dDRhC6XXtPUcfqPRUO8LDc/edit?usp=sharing",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RitoTorri/Blog-.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RitoTorri/Blog-/issues"
+  },
+  "homepage": "https://github.com/RitoTorri/Blog-#readme",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0",
+    "pg": "^8.16.3"
+  },
+  "devDependencies": {
+    "morgan": "^1.10.1",
+    "nodemon": "^3.1.10"
+  }
+}
