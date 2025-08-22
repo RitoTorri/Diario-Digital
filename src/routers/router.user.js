@@ -14,25 +14,21 @@ router.get('/home', (req, res) => {
     res.send('estas en el router de home')
 })
 
-router.get('/your-posts', (req, res) => {
-    res.send('estas en el router de tus posts')
-})
-
-router.get('/send-post', (req, res) => {
-    res.send('estas en el router de subir post')
-})
-
 router.get('/profile', (req, res) => {
     res.send('estas en el router de perfil')
 })
 
 
 /* METHODS post */
-router.post('/sign-in',(req, res) => {
+router.post('/sign-in', async (req, res) => {
     const { email, password } = req.body
     const user = { email, password }
-    const result = controller.signIn(user)
-    res.json(result)
+    const result = await controller.signIn(user)
+    
+    if(!result.success) res.json(result)
+    
+    const resultFinal = {data: result, redirect: 'blog/rito/home'}
+    res.json(resultFinal)
 })
 
 router.post('/sign-up',async (req, res) => {
@@ -42,12 +38,11 @@ router.post('/sign-up',async (req, res) => {
     res.json(result)
 })
 
-router.post('/send-post', (req, res) => {
-    res.send('estas en el router de subir post')
-})
-
-router.post('/profile', (req, res) => {
-    res.send('estas en el router de perfil')
+router.put('/profile', async (req, res) => {
+    const {name, lastname, email, emailNew} = req.body
+    const user = { name, lastname,  email, emailNew }
+    const result = await controller.Editprofile(user)
+    res.json(result)
 })
 
 module.exports = router

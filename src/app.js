@@ -2,7 +2,8 @@ const express = require('express')
 const morgan = require('morgan')
 const config = require('./config')
 const path = require('path')
-const router = require('./routers/router')
+const routerUser = require('./routers/router.user')
+const routerPost = require('./routers/router.post')
 
 const app = express()
 
@@ -12,6 +13,7 @@ app.use(express.static(path.join(__dirname, '../public')))
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
-app.use('/blog/rito', router)
+app.use('/blog/rito', routerUser)
+app.use('/blog/rito', routerPost)
 
 module.exports = app
