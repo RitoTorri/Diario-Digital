@@ -9,7 +9,7 @@ const app = express()
 
 app.set('port', config.app.port)
 app.use(morgan('dev'))
-app.use(express.static(path.join(__dirname, '../public')))
+app.use(express.static(path.join(__dirname, 'public')))
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 

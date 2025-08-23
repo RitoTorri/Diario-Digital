@@ -1,21 +1,22 @@
 const router = require('express').Router()
 const controller = require('../controllers/controller.user')
+const path = require('path')
 
 /* METHODS get */
 router.get('/sign-in',(req, res) => {
-    res.send('estas en el router de iniciar sesion')
+    res.sendFile(path.join(__dirname, '../views/sign-in.html'))
 })
 
 router.get('/sign-up',(req, res) => {
-    res.send('estas en el router de registrarse')
+    res.sendFile(path.join(__dirname, '../views/sign-up.html'))
 })
 
 router.get('/home', (req, res) => {
-    res.send('estas en el router de home')
+    res.sendFile(path.join(__dirname, '../views/home.html'))
 })
 
 router.get('/profile', (req, res) => {
-    res.send('estas en el router de perfil')
+    res.sendFile(path.join(__dirname, '../views/profile.html'))
 })
 
 

@@ -1,10 +1,12 @@
 const router = require('express').Router()
 const controller = require('../controllers/controller.post')
+const path = require('path')
 
 router.get('/your-posts', async(req, res) => {
     const email = req.query.email 
     const result = await controller.yourPost(email)
-    res.json(result)
+    const resultFinal = {data: result, redirect: 'blog/rito/home'}
+    res.json(resultFinal)
 })
 
 router.delete('/your-posts', async(req, res) => {
@@ -14,7 +16,7 @@ router.delete('/your-posts', async(req, res) => {
 })
 
 router.get('/send-post', (req, res) => {
-    res.send('estas en el router de subir post')
+    res.sendFile(path.join(__dirname, '../views/send-post.html'))
 })
 
 router.post('/send-post', async (req, res) => {
