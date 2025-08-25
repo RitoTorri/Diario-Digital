@@ -1,5 +1,41 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/sendpost.css">
+    <title>Document</title>
+</head>
+
+<body>
     <main>
-        <h1>Enviar un post</h1>
+        <section id="section-info">
+            <div id="container-image">
+                <img src="/img/icon-user.png" alt="User's profile picture" id="icon-user">
+            </div>
+            <div id="container-data">
+                <p id="paragraph-name">Jesus Cortez</p>
+                <p id="paragraph-email">Email@gmail.com</p>
+            </div>
+        </section>
+
+        <form action="">
+            <section id="section-post">
+                <div id="container-title-post">
+                    <input type="text" placeholder="Titulo del Post">
+                </div>
+                <div id="container-content-post">
+                    <textarea placeholder="Contenido del Post" rows="15"></textarea>
+                </div>
+            </section>
+
+            <section id="section-buttons">
+                <button id="btn-send-post">Subir Post</button>
+                <button id="btn-cancel">Cancelar</button>
+            </section>
+        </form>
     </main>
+</body>
+
 </html>

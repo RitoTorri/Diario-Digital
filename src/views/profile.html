@@ -1,5 +1,38 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/profile.css">
+    <title>Document</title>
+</head>
+
+<body>
     <main>
-        <h1>Perfil</h1>
+        <section id="section-update-profile">
+            <form id="form-update-profile">
+                <div id="container-image">
+                    <img src="/img/icon-user.png" alt="User's profile picture" id="icon-user">
+                    <img src="/img/edit.png" alt="Edit icon" id="icon-edit">
+                </div>
+
+                <div id="container-data">
+                    <input type="text" id="input-name" placeholder="Nombre">
+                    <input type="text" id="input-last-name" placeholder="Apellido">
+                </div>
+
+                <div id="container-email">
+                    <input type="text"  id="input-email" placeholder="Email">
+                </div>
+
+                <div id="container-buttons">
+                    <button id="btn-delete" type="reset">Cancelar</button>
+                    <button id="btn-update" type="submit">Actualizar Perfil</button>
+                </div>
+            </form>
+        </section>
     </main>
+</body>
+
 </html>

@@ -1,13 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/home.css">
     <title>Blog - Home</title>
 </head>
+
 <body>
     <main>
-        <h1>Blog</h1>
+        <section id="section-info">
+            <div id="container-data">
+                <img src="/img/icon-user.png" alt="" id="icon-user">
+                <div id="container-dates">
+                    <p id="section-name">Jesus Cortez</p>
+                    <p id="section-name">Email@gmail.com</p>
+                </div>
+            </div>
+            <div id="container-button">
+                <button id="btn-logout">Cerrar Sesión</button>
+            </div>
+        </section>
+
+        <nav id="nav-bar">
+            <button id="btn-your-post" class="buttons-nav">Tus Posts</button>
+            <button id="btn-send-post" class="buttons-nav">Subir Post</button>
+            <button id="btn-profile" class="buttons-nav">Perfil</button>
+        </nav>
+
+        <section id="section-results">
+            <iframe src="/blog/rito/your-posts" id="iframe"></iframe>
+        </section>
+
+        <dialog id="dialog-logout">
+            <p id="dialog-message">¿Estás seguro de que quieres cerrar sesión?</p>
+            <div id="container-buttons-dialog">
+                <button id="btn-logout-dialog">Si</button>
+                <button id="btn-cancel-dialog">No</button>
+            </div>
+        </dialog>
     </main>
+
+    <script src="/scripts/script.js"></script>
 </body>
+
 </html>
