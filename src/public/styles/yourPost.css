@@ -1,0 +1,143 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+img {
+    width: 50px;
+    height: 50px;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    width: 50%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+#error-message {
+    color: gray;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    user-select: none;
+}
+
+article {
+    width: 100%;
+    height: 100%;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    padding: 10px;
+}
+
+#section-info {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    column-gap: 10px;
+}
+
+#container-image {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#container-data {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
+
+#paragraph-name {
+    font-size: 1.1rem;
+    font-weight: bold;
+    user-select: none;
+} 
+
+#paragraph-email {
+    font-size: 1rem;
+    user-select: none;
+}
+
+#container-date {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    color: black;
+}
+
+#paragraph-date {
+    font-size: 1rem;
+    color: black;
+    display: flex;
+    user-select: none;
+}
+
+#section-post {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 10px;
+}
+
+#container-title-post {
+    width: 100%;
+}
+
+#container-content-post {
+    width: 100%;
+}
+
+#title-post {
+    width: 100%;
+    height: auto;
+    color: white;
+    padding: 15px;
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: #323841;
+    border: none;
+    user-select: none;
+    pointer-events: none;
+    word-wrap: break-word;
+}
+
+#content-post {
+    width: 100%;
+    height: auto;
+    border: none;
+    font-size: 1rem;
+    user-select: none;
+    pointer-events: none;
+}
+
+#title-post::placeholder {
+    color: white;
+}
+
+#content-post::placeholder {
+    color: black;
+}
+
+#content-post:focus {
+    outline: none;
+}

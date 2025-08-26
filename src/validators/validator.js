@@ -7,7 +7,7 @@ function empty(user){
 }
 
 function ErrorEmail(email){
-    const regular = /^[a-zA-Z0-9_\-+%]+@[a-zA-Z0-9_-]+\.[a-zA-Z]{2,}$/
+    const regular = /^[a-zA-Z0-9_+%-]+@[a-zA-Z0-9_-]+\.[a-zA-Z]{2,}$/
     if(!regular.test(email))  return true
     return false
 }

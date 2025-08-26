@@ -26,10 +26,7 @@ router.post('/sign-in', async (req, res) => {
     const user = { email, password }
     const result = await controller.signIn(user)
     
-    if(!result.success) res.json(result)
-    
-    const resultFinal = {data: result, redirect: 'blog/rito/home'}
-    res.json(resultFinal)
+    res.json(result)
 })
 
 router.post('/sign-up',async (req, res) => {
@@ -41,7 +38,10 @@ router.post('/sign-up',async (req, res) => {
 
 router.put('/profile', async (req, res) => {
     const {name, lastname, email, emailNew} = req.body
-    const user = { name, lastname,  email, emailNew }
+    let user
+
+    if(emailNew === undefined) user = { name: name, lastname: lastname, email : email }
+    else user = { name: name, lastname: lastname, email: email, emailNew: emailNew }
     const result = await controller.Editprofile(user)
     res.json(result)
 })

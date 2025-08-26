@@ -7,14 +7,14 @@ async function AddPost(post) {
         const user = await userEx.SearchUser(post.author)
         if(user.success === false) return { message: 'Error al buscar el autor del post', success: false, status: 400 }
         
-        const query = 'INSERT INTO posts (id_user, title, content_post, url) VALUES ($1, $2, $3, $4)'
-        const data = [user.id, post.title, post.content_post, post.image]
+        const query = 'INSERT INTO posts (id_user, title, content_post) VALUES ($1, $2, $3)'
+        const data = [user.id, post.title, post.content_post]
 
         const result = await pool.query(query, data)
 
-        if(result.affectedRows === 0) return { message: 'Error al registrar post. Intentelo de nuevo.', success: false, status: 400 }
+        if(result.affectedRows === 0) return { success: false, status: 400 }
 
-        return { message: 'Post registrado exitosamente.', success: true, status: 201 }
+        return { success: true, status: 201 }
     } catch (error) {
         console.error(error)
         return { message: 'Error interno del servidor al registrar post', success: false, status: 500 };
@@ -23,13 +23,13 @@ async function AddPost(post) {
 
 async function GetPosts(email) {
     try {
-        const query = 'SELECT title, content_post, url, created_post FROM posts WHERE id_user = (SELECT id FROM users WHERE email = $1)'
+        const query = 'SELECT title, content_post, created_post FROM posts WHERE id_user = (SELECT id FROM users WHERE email = $1)'
         const data = [email]
         const result = await pool.query(query, data)
         
         if(result.rows.length === 0) return { message: 'No se encontraron posts', success: false, status: 404 }
     
-        return { success: true, status: 200, posts: result.rows }
+        return { success: true, status: 200, posts: result.rows}
     } catch (error) {
         return { message: 'Error interno del servidor al buscar posts', success: false, status: 500 };
     }

@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
 }
 
 body{
@@ -124,4 +125,93 @@ main {
 
 #btn-cancel:hover {
     background-color: rgb(182, 7, 7);
+}
+
+.error::placeholder{
+    color: red !important;
+    font-weight: bold;
+}
+
+dialog {
+    border: 1px solid black;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 10px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    
+    font-size: 1.2rem;
+    word-wrap: break-word;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+dialog #btn-ok-success {
+    background-color: #323841;
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    width: 50%;
+    transition: background-color 0.3s ease;
+}
+
+#btn-ok-success:hover {
+    background-color: black;
+}
+
+#dialog-error div{
+    display: flex;
+    flex-direction: row;
+    column-gap: 10px;
+}
+
+#dialog-error button {
+    width: 50%;
+    height: 40px;
+    font-size: 1rem;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#btn-cancel-error {
+    background-color: red;
+    color: white;
+}
+
+#btn-cancel-error:hover {
+    background-color: rgb(182, 7, 7);
+}
+
+#btn-try-again {
+    background-color: #323841;
+    color: white;
+}
+
+#btn-try-again:hover {
+    background-color: black;
+}
+
+#btn-ok-large {
+    background-color: #323841;
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    width: 50%;
+    transition: background-color 0.3s ease;
+}
+
+#btn-ok-large:hover {
+    background-color: black;
 }

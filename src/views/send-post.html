@@ -15,27 +15,47 @@
                 <img src="/img/icon-user.png" alt="User's profile picture" id="icon-user">
             </div>
             <div id="container-data">
-                <p id="paragraph-name">Jesus Cortez</p>
-                <p id="paragraph-email">Email@gmail.com</p>
+                <p id="paragraph-name"></p>
+                <p id="paragraph-email"></p>
             </div>
         </section>
 
-        <form action="">
+        <form id="form-post">
             <section id="section-post">
                 <div id="container-title-post">
-                    <input type="text" placeholder="Titulo del Post">
+                    <input type="text" placeholder="Titulo del Post" id="title-post">
                 </div>
                 <div id="container-content-post">
-                    <textarea placeholder="Contenido del Post" rows="15"></textarea>
+                    <textarea placeholder="Contenido del Post" rows="15" id="content-post"></textarea>
                 </div>
             </section>
 
             <section id="section-buttons">
-                <button id="btn-send-post">Subir Post</button>
-                <button id="btn-cancel">Cancelar</button>
+                <button id="btn-send-post" type="submit">Subir Post</button>
+                <button id="btn-cancel" type="reset">Cancelar</button>
             </section>
         </form>
     </main>
+
+    <dialog id="dialog-success" >
+        <p id="dialog-message">Su post ha sido enviado exitosamente. Puedes verlos en tus posts.</p>
+        <button id="btn-ok-success">Ok</button>
+    </dialog>
+
+    <dialog id="dialog-error">
+        <p id="dialog-message-error">Error al enviar post. Intentelo de nuevo.</p>
+        <div>
+            <button id="btn-cancel-error">Cancelar</button>
+            <button id="btn-try-again">Intentar de nuevo</button>
+        </div>
+    </dialog>
+
+    <dialog id="dialog-post-large">
+        <p id="dialog-message-large"></p>
+        <button id="btn-ok-large">Ok</button>
+    </dialog>
+
+    <script src="/scripts/script.js"></script>
 </body>
 
 </html>

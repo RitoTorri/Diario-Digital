@@ -3,6 +3,7 @@
     padding: 0px;
     box-sizing: border-box;
     transition: all 0.3s ease;
+    font-family: 'Montserrat', sans-serif;
 }
 
 /* Elementos Raiz */
@@ -57,6 +58,7 @@ main {
     display: flex;
     justify-content: end;
     column-gap: 10px;
+    display: none;
 }
 
 /* Elementos Hijos */
@@ -83,7 +85,6 @@ button {
     font-weight: bold;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    display: none;
 }
 
 #btn-update {
@@ -124,4 +125,45 @@ input:focus {
 
 input::placeholder {
     color: black;
+}
+
+dialog {
+    border: 1px solid black;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 10px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    
+    font-size: 1.2rem;
+    word-wrap: break-word;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+dialog p {
+    font-size: 1.2rem;
+    word-wrap: break-word;
+}
+
+dialog #btn-ok-update {
+    background-color: #323841;
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    width: 50%;
+    transition: background-color 0.3s ease;
+}
+
+#btn-ok-update:hover {
+    background-color: black;
 }

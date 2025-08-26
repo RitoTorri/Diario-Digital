@@ -2,6 +2,7 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
 }
 
 body {
@@ -24,7 +25,6 @@ main {
     align-items: center;
     border: 1px solid black;
     flex-shrink: 0;
-    /* Evita que se encoja */
 }
 
 /* Elementos padres */
@@ -32,6 +32,11 @@ main {
     display: flex;
     flex-direction: row;
     column-gap: 5px;
+}
+
+#section-name {
+    font-size: 1.1rem;
+    font-weight: bold;
 }
 
 #container-button {
@@ -170,4 +175,9 @@ dialog::backdrop {
     background: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(200px);
     -webkit-backdrop-filter: blur(5px); /* Para Safari */
+}
+
+.active {
+    background-color: black;
+    color: white;
 }

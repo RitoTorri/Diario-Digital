@@ -18,21 +18,28 @@
                 </div>
 
                 <div id="container-data">
-                    <input type="text" id="input-name" placeholder="Nombre">
-                    <input type="text" id="input-last-name" placeholder="Apellido">
+                    <input type="text" id="input-name" placeholder="Nombre" class="input">
+                    <input type="text" id="input-last-name" placeholder="Apellido" class="input">
                 </div>
 
                 <div id="container-email">
-                    <input type="text"  id="input-email" placeholder="Email">
+                    <input type="text"  id="input-email" placeholder="Email" class="input">
                 </div>
 
                 <div id="container-buttons">
-                    <button id="btn-delete" type="reset">Cancelar</button>
+                    <button id="btn-delete">Cancelar</button>
                     <button id="btn-update" type="submit">Actualizar Perfil</button>
                 </div>
             </form>
         </section>
     </main>
+
+    <dialog id="dialog-update-profile">
+        <p>Su perfil ha sido actualizado exitosamente.</p>
+        <button id="btn-ok-update">Ok</button>
+    </dialog>
+
+    <script src="/scripts/script.js"></script>
 </body>
 
 </html>

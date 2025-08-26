@@ -2,12 +2,9 @@ const validator = require('../validators/validator')
 const model = require('../models/model.post')
 
 async function sendPost(post) {
-    const image = post.image
-    delete post.image
     if (validator.empty(post)) {
         return { message: "Campos vacios. Por favor, rellena todos los campos", success: false, status: 400 }
     }
-    post.image = image
     const result = await model.AddPost(post)
     return result
 }

@@ -78,6 +78,7 @@ div input {
     border-radius: 5px;
     border: 1px solid #323841;
     width: 100%;
+    transition: all 0.3s ease;
 }
 
 a {
@@ -88,7 +89,20 @@ a:hover{
     color: #046c7e;
 }
 
+input:focus {
+    outline: none;
+}
+
 #btn-login:hover{
     background-color: #046c7e;
+}
+
+.error {
+    border: 1px solid red;
+}
+
+.error::placeholder{
+    color: red;
+    font-weight: bold;
 }
 
