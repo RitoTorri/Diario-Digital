@@ -2,7 +2,6 @@ const userEx = require('./model.user')
 const pool = require('../database/db')
 
 async function AddPost(post) {
-    console.log(post)
     try {
         const user = await userEx.SearchUser(post.author)
         if(user.success === false) return { message: 'Error al buscar el autor del post', success: false, status: 400 }
@@ -41,11 +40,10 @@ async function DeletePost(date) {
         const query = 'DELETE FROM posts WHERE created_post = $1'
         const data = [date]
         const result = await pool.query(query, data)
-        console.log(result)
 
         if(result.affectedRows === 0) return { message: 'Error al eliminar post. Intentelo de nuevo.', success: false, status: 400 }
 
-        return { message: 'Post eliminado exitosamente.', success: true, status: 201 }
+        return { message: 'Post eliminado exitosamente.', success: true, status: 200 }
 
     } catch (error) {
         console.error(error)

@@ -5,12 +5,13 @@
     font-family: 'Montserrat', sans-serif;
 }
 
-body{
+body {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 10px;
 }
 
 main {
@@ -21,6 +22,7 @@ main {
     display: flex;
     flex-direction: column;
     row-gap: 10px;
+    min-width: 300px; /* evita que se vuelva demasiado estrecho */
 }
 
 /* Elementos abuelos */
@@ -42,21 +44,18 @@ main {
 
 #section-buttons {
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     column-gap: 10px;
 }
 
-
-/* Eleentos padres */
-#container-title-post{
+/* Elementos padres */
+#container-title-post {
     width: 100%;
 }
 
-#container-content-post{
+#container-content-post {
     width: 100%;
 }
-
-
 
 /* Elementos hijos */
 #icon-user {
@@ -80,12 +79,13 @@ main {
     color: white;
 }
 
-
 #container-content-post textarea {
     font-size: 1rem;
     color: black;
     width: 100%;
-    height: auto;
+    height: 150px; /* altura inicial razonable */
+    padding: 10px;
+    resize: vertical; /* permite ajuste vertical */
 }
 
 #paragraph-name {
@@ -97,7 +97,7 @@ main {
     font-size: 1rem;
 }
 
-#section-buttons button{
+#section-buttons button {
     width: 100px;
     height: 40px;
     font-size: 1rem;
@@ -117,8 +117,7 @@ main {
     color: white;
 }
 
-
-/*  efectos */
+/* Efectos */
 #btn-send-post:hover {
     background-color: black;
 }
@@ -127,11 +126,12 @@ main {
     background-color: rgb(182, 7, 7);
 }
 
-.error::placeholder{
+.error::placeholder {
     color: red !important;
     font-weight: bold;
 }
 
+/* Dialogs */
 dialog {
     border: 1px solid black;
     padding: 20px;
@@ -141,18 +141,18 @@ dialog {
     row-gap: 10px;
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    
     font-size: 1.2rem;
     word-wrap: break-word;
-
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     display: none;
+    max-width: 90%;
 }
 
-dialog #btn-ok-success {
+dialog #btn-ok-success,
+#btn-ok-large {
     background-color: #323841;
     color: white;
     padding: 10px;
@@ -163,14 +163,16 @@ dialog #btn-ok-success {
     transition: background-color 0.3s ease;
 }
 
-#btn-ok-success:hover {
+#btn-ok-success:hover,
+#btn-ok-large:hover {
     background-color: black;
 }
 
-#dialog-error div{
+#dialog-error div {
     display: flex;
     flex-direction: row;
     column-gap: 10px;
+    flex-wrap: wrap;
 }
 
 #dialog-error button {
@@ -201,17 +203,57 @@ dialog #btn-ok-success {
     background-color: black;
 }
 
-#btn-ok-large {
-    background-color: #323841;
-    color: white;
-    padding: 10px;
-    font-weight: bold;
-    cursor: pointer;
-    border: none;
-    width: 50%;
-    transition: background-color 0.3s ease;
+/* ===================== */
+/* RESPONSIVIDAD          */
+/* ===================== */
+
+@media (max-width: 768px) {
+    main {
+        width: 70%;
+        height: auto;
+    }
+
+    #container-title-post input,
+    #container-content-post textarea {
+        font-size: 0.95rem;
+        padding: 10px;
+    }
+
+    #section-buttons {
+        justify-content: center;
+    }
 }
 
-#btn-ok-large:hover {
-    background-color: black;
+@media (max-width: 480px) {
+    main {
+        width: 100%;
+        height: auto;
+        padding: 5px;
+    }
+
+    #section-info {
+        flex-direction: column;
+        align-items: flex-start;
+        row-gap: 10px;
+    }
+
+    #section-buttons {
+        flex-direction: column;
+        justify-content: center;
+        row-gap: 10px;
+    }
+
+    #section-buttons button {
+        width: 100%;
+    }
+
+    #container-title-post input,
+    #container-content-post textarea {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+
+    #container-content-post textarea {
+        height: 120px;
+    }
 }

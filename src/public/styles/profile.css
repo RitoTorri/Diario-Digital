@@ -9,10 +9,11 @@
 /* Elementos Raiz */
 body {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 10px;
 }
 
 main {
@@ -23,10 +24,11 @@ main {
     row-gap: 10px;
     border: 2px solid black;
     padding: 10px;
+    min-width: 300px; /* para móviles */
 }
 
 /* Elementos Abuelos */
-#section-update-profile  #form-update-profile {
+#section-update-profile #form-update-profile {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -55,10 +57,9 @@ main {
 
 #container-buttons {
     width: 100%;
-    display: flex;
+    display: none; /* oculto */
     justify-content: end;
     column-gap: 10px;
-    display: none;
 }
 
 /* Elementos Hijos */
@@ -120,13 +121,14 @@ input {
 
 input:focus {
     outline: none;
-    border-bottom:3px solid #4d545e;
+    border-bottom: 3px solid #4d545e;
 }
 
 input::placeholder {
     color: black;
 }
 
+/* Dialogs */
 dialog {
     border: 1px solid black;
     padding: 20px;
@@ -137,15 +139,14 @@ dialog {
     row-gap: 10px;
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    
     font-size: 1.2rem;
     word-wrap: break-word;
-
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     display: none;
+    max-width: 90%;
 }
 
 dialog p {
@@ -166,4 +167,64 @@ dialog #btn-ok-update {
 
 #btn-ok-update:hover {
     background-color: black;
+}
+
+/* ===================== */
+/* RESPONSIVIDAD          */
+/* ===================== */
+
+/* Tablets */
+@media (max-width: 768px) {
+    main {
+        width: 60%;
+    }
+
+    #container-data {
+        column-gap: 5px;
+    }
+
+    input {
+        font-size: 0.95rem;
+        padding: 8px;
+    }
+
+    button {
+        width: 45%;
+    }
+}
+
+/* Móviles */
+@media (max-width: 480px) {
+    main {
+        width: 100%;
+        padding: 5px;
+    }
+
+    #container-data {
+        flex-direction: column; /* mantiene inputs uno al lado del otro si quieres, esto no afecta su flex row */
+        row-gap: 10px;
+    }
+
+    #container-buttons {
+        display: none; /* sigue oculto */
+    }
+
+    button {
+        width: 100%;
+        margin-top: 5px;
+    }
+
+    input {
+        font-size: 0.9rem;
+        padding: 6px;
+    }
+
+    #icon-user {
+        width: 40%;
+    }
+
+    #icon-edit {
+        width: 15%;
+        right: 25%;
+    }
 }

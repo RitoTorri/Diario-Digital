@@ -132,12 +132,13 @@ function DataHome() {
         sectionEmail.textContent = user.email
 
         logout.addEventListener('click', async () => {
-            dialog.dialog.style.display = 'block'
+            dialog.dialog.style.display = 'flex'
         })
 
         dialog.btnLogout.addEventListener('click', async () => {
             dialog.dialog.style.display = 'none'
             localStorage.removeItem('user')
+            localStorage.removeItem('posts')
             window.location.href = '/blog/rito/sign-in'
         })
 
@@ -156,8 +157,7 @@ function DataHome() {
                 switch (button.id) {
                     case 'btn-your-post':
                         const result = await getPosts()
-                        console.log(result)
-                        if(result.result.success){
+                        if (result.result.success) {
                             localStorage.setItem('posts', JSON.stringify(result.result.posts))
                         }
                         iframe.src = result.redirect
@@ -203,10 +203,8 @@ async function YourPosts() {
     const container = document.getElementById('container-your-posts')
     const errorMessage = document.getElementById('error-message')
 
-    console.log(localStorage.getItem('posts'))
-
     if (container) {
-        if(localStorage.getItem('posts') === ""){
+        if (localStorage.getItem('posts') === null) {
             errorMessage.innerHTML = "No se encontraron posts"
             return
         }
@@ -215,8 +213,10 @@ async function YourPosts() {
         const posts = JSON.parse(localStorage.getItem('posts'))
         const user = JSON.parse(localStorage.getItem('user'))
 
-        for(let i = 0; i < posts.length; i++){
-            console.log(posts[i])
+        for (let i = 0; i < posts.length; i++) {
+            const fechaDb = new Date(posts[i].created_post)
+            fechaDb.setHours(fechaDb.getHours() - 4)
+            let fechaFormateada = fechaDb.toISOString().replace('T', ' ').split(".")
 
             container.innerHTML += `
                 <article id="article-post">
@@ -229,7 +229,7 @@ async function YourPosts() {
                             <p id="paragraph-email">${user.email}</p>
                         </div>
                         <div id="container-date">
-                            <p id="paragraph-date">${posts[i].created_post}</p>
+                            <p id="paragraph-date">${fechaFormateada[0]}</p>
                         </div>
                     </section>
                     <section id="section-post">
@@ -239,11 +239,52 @@ async function YourPosts() {
                         <div id="container-content-post">
                             <textarea placeholder="Contenido del Post" rows="15" id="content-post">${posts[i].content_post}</textarea>
                         </div>
+                        <div id="container-buttons-post">
+                            <button id="btn-delete-post" onclick="DeletePost('${fechaFormateada[0]}')">Eliminar</button>
+                        </div>
                     </section>
                 </article>
             `
         }
     }
+}
+
+
+async function DeletePost(date) {
+    const dialoDelete = document.getElementById('dialog-delete')
+    const btnOk = document.getElementById('btn-ok')
+    const btnCancel = document.getElementById('btn-cancel')
+
+    dialoDelete.style.display = 'flex'
+
+    btnOk.addEventListener('click', async () => {
+        try {
+            const result = await fetch('/blog/rito/your-posts?date=' + date, {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+            })
+
+            const a = await result.json()
+            if (!result.ok) {
+                console.error(a.message)
+                return
+            }
+
+            dialoDelete.style.display = 'none'
+            localStorage.removeItem('posts')
+
+            parent.location.reload(true)
+
+        } catch (error) {
+            console.error(error)
+        }
+    })
+
+    btnCancel.addEventListener('click', async () => {
+        dialoDelete.style.display = 'none'
+    })
 }
 
 
@@ -396,9 +437,10 @@ async function sendPost() {
                 return
             }
 
-            if (content.value.length > 200) {
+            if (content.value.length > 400) {
+                console.log(content.value.length)
                 dialogLarge.style.display = 'flex'
-                messageLarge.textContent = 'El contenido no puede tener mas de 200 caracteres.'
+                messageLarge.textContent = 'El contenido no puede tener mas de 400 caracteres.'
                 btnOkLarge.addEventListener('click', async () => {
                     dialogLarge.style.display = 'none'
                 })

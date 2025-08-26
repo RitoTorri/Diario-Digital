@@ -5,17 +5,23 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+html, body {
+    height: 100%; /* crucial para que main y section-results ocupen el alto completo */
+}
+
 body {
     width: 100%;
-    height: 100vh;
+    display: flex;
+    flex-direction: column;
     padding: 10px;
 }
 
 main {
     width: 100%;
-    height: 100%;
+    flex: 1;
     display: flex;
     flex-direction: column;
+    min-height: 0; /* importante para que los hijos con flex:1 funcionen */
 }
 
 #section-info {
@@ -25,13 +31,16 @@ main {
     align-items: center;
     border: 1px solid black;
     flex-shrink: 0;
+    flex-wrap: wrap;
+    row-gap: 10px;
 }
 
-/* Elementos padres */
 #container-data {
     display: flex;
     flex-direction: row;
     column-gap: 5px;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 #section-name {
@@ -52,17 +61,17 @@ nav {
     column-gap: 20px;
     padding: 10px;
     flex-shrink: 0;
-    /* Evita que se encoja */
+    flex-wrap: wrap;
+    row-gap: 10px;
 }
 
 #section-results {
-    width: 100%;
-    border: 1px solid black;
-    flex-grow: 1;
+    flex: 1;         /* ocupa todo el espacio sobrante */
+    min-height: 0;   /* crucial para que el iframe se expanda */
+    display: flex;   /* permite que iframe se estire */
+    border: 1px solid black;  /* para que no se vea el borde del iframe */
 }
 
-
-/* Elementos hijos */
 #icon-user {
     width: 50px;
     height: 50px;
@@ -74,7 +83,7 @@ nav {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: start;
+    align-items: flex-start;
 }
 
 #btn-logout {
@@ -89,7 +98,9 @@ nav {
 }
 
 .buttons-nav {
-    width: 10%;
+    flex: 1;
+    min-width: 100px;
+    max-width: 200px;
     background-color: white;
     color: black;
     font-size: 1rem;
@@ -101,8 +112,10 @@ nav {
 }
 
 #iframe {
+    flex: 1;         /* se expande verticalmente */
     width: 100%;
     height: 100%;
+    display: block;  /* crucial para height:100% */
     border: none;
 }
 
@@ -112,7 +125,6 @@ nav {
     background-color: black;
     color: white;
 }
-
 
 dialog {
     border: 1px solid black;
@@ -128,11 +140,13 @@ dialog {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    max-width: 90%;
 }
 
 #dialog-message {
     font-size: 1.2rem;
     word-wrap: break-word;
+    text-align: center;
 }
 
 #container-buttons-dialog {
@@ -141,10 +155,12 @@ dialog {
     flex-direction: row;
     justify-content: center;
     column-gap: 10px;
+    flex-wrap: wrap;
 }
 
 #container-buttons-dialog button {
-    width: 30%;
+    flex: 1;
+    min-width: 100px;
     height: 30px;
     font-size: 1rem;
     border: none;
@@ -174,10 +190,62 @@ dialog {
 dialog::backdrop {
     background: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(200px);
-    -webkit-backdrop-filter: blur(5px); /* Para Safari */
+    -webkit-backdrop-filter: blur(5px);
 }
 
 .active {
     background-color: black;
     color: white;
+}
+
+/* ===================== */
+/*   RESPONSIVIDAD       */
+/* ===================== */
+
+/* Tablets */
+@media (max-width: 768px) {
+    #section-name {
+        font-size: 1rem;
+    }
+
+    #btn-logout {
+        padding: 8px;
+        font-size: 0.95rem;
+    }
+
+    .buttons-nav {
+        font-size: 0.95rem;
+        padding: 8px;
+    }
+}
+
+/* Móviles */
+@media (max-width: 480px) {
+    #section-info {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav {
+        flex-direction: column;
+        row-gap: 8px;
+    }
+
+    .buttons-nav {
+        width: 100%;
+        max-width: none;
+    }
+
+    #btn-logout {
+        width: 100%;
+    }
+
+    #dialog-message {
+        font-size: 1rem;
+    }
+
+    #container-buttons-dialog button {
+        flex: unset;
+        width: 100%;
+    }
 }
