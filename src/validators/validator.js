@@ -13,7 +13,7 @@ function ErrorEmail(email){
 }
 
 function ErrorData(datos){
-    const regular = /^[a-zA-Z0-9]+$/
+    const regular = /^[a-zA-Z]+$/
     if(!regular.test(datos))  return true
     return false
 }
