@@ -4,7 +4,7 @@ Ha sido realizado con express, node.js, html, css, js y para las bases de datos 
 
 # 1: env:
   - Este archivo debe de tener: 
-     •	PORT: Sera el puerto donde se ejecuta el proyecto.
+     •	PORT: Sera el puerto donde se ejecuta el proyecto.\n
      •	DB_xxxx: Aqui colocas los datos de la db que seran name, user, password, port, host. Ejemplo = "BD_PORT = 5432"
 # 2: Dependencias:
     •	Simplemente coloca "npm i"
