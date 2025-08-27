@@ -6,7 +6,7 @@ Ha sido realizado con express, node.js, html, css, js y para las bases de datos 
   - Este archivo debe de tener: 
      •	PORT: Sera el puerto donde se ejecuta el proyecto.
      •	DB_xxxx: Aqui colocas los datos de la db que seran name, user, password, port, host. Ejemplo = "BD_PORT = 5432"
-# 2: Depenndencias:
+# 2: Dependencias:
     •	Simplemente coloca "npm i"
 
 Para Ejecutar el proyecto solo necesitas colocar el "npm run dev". Espero lo disfrutes. ❤️❤️❤️
