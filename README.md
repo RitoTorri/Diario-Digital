@@ -1,3 +1,12 @@
 # Blog
-Esta es un proyecto donde tu podrás subir tus ideas, pensamientos, imágenes, etc..
-*Aqui esta el link de la planeacion del proyecto:* https://docs.google.com/document/d/1zStfino5uCYaztrAtqUE3dDRhC6XXtPUcfqPRUO8LDc/edit?usp=sharing
+Esta es un proyecto donde tu podrás subir tus ideas, pensamientos, etc..
+Ha sido realizado con express, node.js, html, css, js y para las bases de datos se uso el motor de bases de datos PosgresSQL. Si descargas el archivo necesitas realizar una serie de pasos.
+
+# 1: env:
+  - Este archivo debe de tener: 
+     •	PORT: Sera el puerto donde se ejecuta el proyecto.
+     •	DB_xxxx: Aqui colocas los datos de la db que seran name, user, password, port, host. Ejemplo = "BD_PORT = 5432"
+# 2: Depenndencias:
+    •	Simplemente coloca "npm i"
+
+Para Ejecutar el proyecto solo necesitas colocar el "npm run dev". Espero lo disfrutes. ❤️❤️❤️
