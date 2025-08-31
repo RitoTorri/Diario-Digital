@@ -4,9 +4,9 @@
 ---------------------------------
 
 # Tecnologias Implementadas:  
-1: <span style="color:#3C873A; font-weight:bold;">Node.js + Express</span>  
-2: <span style="color:#336791; font-weight:bold;">PostgreSQL</span>  
-3: <span style="color:#E34F26; font-weight:bold;">HTML</span>, <span style="color:#1572B6; font-weight:bold;">CSS</span> y <span style="color:#F7DF1E; font-weight:bold;">JavaScript</span>  
+1: Node.js + Express
+2: PostgreSQL
+3: HTML, CSSy JavaScript
 
 ---------------------------------
 
