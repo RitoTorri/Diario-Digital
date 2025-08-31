@@ -4,9 +4,9 @@
 ---------------------------------
 
 # Tecnologias Implementadas:  
-1: Node.js + Express
-2: PostgreSQL
-3: HTML, CSSy JavaScript
+1: Node.js + Express  
+2: PostgreSQL  
+3: HTML, CSSy JavaScript  
 
 ---------------------------------
 
@@ -23,6 +23,8 @@ Crea un archivo .env en la raiz del proyecto, este va a tener:
      DB_USER=Usuario de la base de datos
      DB_PASSWORD=Contraseña de la base de datos
      DB_NAME=Nombre de la base de datos
+
+OJO SOLO FUNCIONA PARA PostgreSQL, si quieres usar otro motor de base de datos tendrias que modificar el codigo.  
 
 ---------------------------------
 
