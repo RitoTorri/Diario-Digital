@@ -1,12 +1,39 @@
 # Blog
-Esta es un proyecto donde tu podrás subir tus ideas, pensamientos, etc..
-Ha sido realizado con express, node.js, html, css, js y para las bases de datos se uso el motor de bases de datos PosgresSQL. Si descargas el archivo necesitas realizar una serie de pasos.
+**Un espacio digital para compartir ideas, pensamientos y reflexiones. Publica tus contenidos, conecta con otros lectores y descubre perspectivas únicas. Tu blog personal donde cada idea encuentra su lugar.**  
 
-# 1: env:
-El archivo debe de tener:
-     • PORT: Sera el puerto donde se ejecuta el proyecto.  
-     • DB_xxxx: Aqui colocas los datos de la db que seran name, user, password, port, host. Ejemplo = "BD_PORT = 5432".  
-# 2: Dependencias:
-    •	Simplemente coloca "npm i"
+---------------------------------
 
-Para Ejecutar el proyecto solo necesitas colocar el "npm run dev". Espero lo disfrutes. ❤️❤️❤️
+# Tecnologias Implementadas:  
+1: Node.js + Express  
+2: PostgreSQL  
+3: HTML, CSS y JavaScript  
+
+---------------------------------
+
+# Instalacion:  
+Ejecuta el comando: npm i  para instalar las dependencias.  
+
+---------------------------------
+
+# Configuracion:
+Crea un archivo .env en la raiz del proyecto, este va a tener:  
+     PORT=Puerto de ejecución
+     DB_PORT=Puerto de la base de datos
+     DB_HOST=Host de la base de datos
+     DB_USER=Usuario de la base de datos
+     DB_PASSWORD=Contraseña de la base de datos
+     DB_NAME=Nombre de la base de datos
+
+---------------------------------
+
+# Ejecucion del servidor en modo desarrollo:
+npm run dev  
+
+---------------------------------
+
+# Uso
+1: Crea tu usuario e inicia sesión.  
+2: Publica posts, edítalos y elimínalos.  
+3:  Visualiza tus posts y los de otros usuarios.
+
+
