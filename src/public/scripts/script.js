@@ -317,12 +317,15 @@ function EditProfile() {
             })
         }
 
-        reset.addEventListener('click', async () => {
-            name.value = user.name
-            lastname.value = user.lastname
-            email.value = user.email
-            containerButtons.style.display = 'none'
-        })
+        reset.addEventListener('click', async (event) => {
+            event.preventDefault();
+            event.stopPropagation();
+
+            name.value = user.name;
+            lastname.value = user.lastname;
+            email.value = user.email;
+            containerButtons.style.display = 'none';
+        });
 
 
         form.removeEventListener('submit', form)

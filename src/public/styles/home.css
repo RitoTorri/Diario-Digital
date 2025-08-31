@@ -5,8 +5,9 @@
     font-family: 'Montserrat', sans-serif;
 }
 
-html, body {
-    height: 100%; /* crucial para que main y section-results ocupen el alto completo */
+html,
+body {
+    height: 100%;
 }
 
 body {
@@ -14,6 +15,8 @@ body {
     display: flex;
     flex-direction: column;
     padding: 10px;
+    background: linear-gradient(135deg, #ece9e6, #ffffff);
+    color: #222;
 }
 
 main {
@@ -21,120 +24,161 @@ main {
     flex: 1;
     display: flex;
     flex-direction: column;
-    min-height: 0; /* importante para que los hijos con flex:1 funcionen */
+    min-height: 0;
+    gap: 15px;
 }
 
+/* ===================== */
+/*      HEADER USER      */
+/* ===================== */
 #section-info {
-    padding: 5px;
+    padding: 12px 18px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: 1px solid black;
+    border: 1px solid #d0d0d0;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     flex-shrink: 0;
     flex-wrap: wrap;
     row-gap: 10px;
+    backdrop-filter: blur(6px);
 }
 
 #container-data {
     display: flex;
     flex-direction: row;
-    column-gap: 5px;
+    column-gap: 12px;
     align-items: center;
     flex-wrap: wrap;
 }
 
 #section-name {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     font-weight: bold;
+    color: #323841;
 }
 
-#container-button {
-    padding: 5px;
+#icon-user {
+    width: 55px;
+    height: 55px;
+    border: 2px solid #323841;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #f5f5f5;
 }
 
+/* ===================== */
+/*      NAVIGATION       */
+/* ===================== */
 nav {
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    column-gap: 20px;
-    padding: 10px;
+    column-gap: 15px;
+    padding: 12px;
     flex-shrink: 0;
     flex-wrap: wrap;
-    row-gap: 10px;
-}
-
-#section-results {
-    flex: 1;         /* ocupa todo el espacio sobrante */
-    min-height: 0;   /* crucial para que el iframe se expanda */
-    display: flex;   /* permite que iframe se estire */
-    border: 1px solid black;  /* para que no se vea el borde del iframe */
-}
-
-#icon-user {
-    width: 50px;
-    height: 50px;
-    border: 1px solid black;
-    border-radius: 50%;
-}
-
-#container-dates {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-}
-
-#btn-logout {
-    background-color: white;
-    color: black;
-    font-size: 1rem;
-    border: 2px solid black;
-    padding: 10px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    row-gap: 12px;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .buttons-nav {
     flex: 1;
-    min-width: 100px;
+    min-width: 120px;
     max-width: 200px;
-    background-color: white;
-    color: black;
+    background: linear-gradient(135deg, #ffffff, #f0f0f0);
+    color: #323841;
     font-size: 1rem;
     font-weight: bold;
-    border: 1px solid black;
+    border: 1px solid #ccc;
     padding: 10px;
+    border-radius: 10px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
-#iframe {
-    flex: 1;         /* se expande verticalmente */
-    width: 100%;
-    height: 100%;
-    display: block;  /* crucial para height:100% */
-    border: none;
-}
-
-/* efectos */
-#btn-logout:hover,
 .buttons-nav:hover {
-    background-color: black;
+    background: linear-gradient(135deg, #323841, #1f242a);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Estado activo */
+.active {
+    background: linear-gradient(135deg, #323841, #1f242a);
     color: white;
 }
 
+/* ===================== */
+/*    LOGOUT BUTTON      */
+/* ===================== */
+#container-button {
+    padding: 5px;
+}
+
+#btn-logout {
+    background: linear-gradient(135deg, #ff8a00, #e52e71);
+    color: white;
+    font-size: 1rem;
+    border: none;
+    padding: 10px 18px;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+#btn-logout:hover {
+    background: linear-gradient(135deg, #e52e71, #ff8a00);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+}
+
+/* ===================== */
+/*     MAIN CONTENT      */
+/* ===================== */
+#section-results {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    border: 1px solid #d0d0d0;
+    border-radius: 15px;
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+}
+
+#iframe {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    display: block;
+    border: none;
+}
+
+/* ===================== */
+/*       DIALOG          */
+/* ===================== */
 dialog {
-    border: 1px solid black;
-    padding: 20px;
+    border: none;
+    padding: 25px;
     display: flex;
     flex-direction: column;
-    row-gap: 10px;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    row-gap: 18px;
+    border-radius: 15px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
     display: none;
+    background: white;
+    animation: scaleFade 0.3s ease forwards;
 
     position: fixed;
     top: 50%;
@@ -144,9 +188,11 @@ dialog {
 }
 
 #dialog-message {
-    font-size: 1.2rem;
+    font-size: 1.15rem;
+    font-weight: 500;
     word-wrap: break-word;
     text-align: center;
+    color: #323841;
 }
 
 #container-buttons-dialog {
@@ -154,62 +200,71 @@ dialog {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    column-gap: 10px;
+    column-gap: 12px;
     flex-wrap: wrap;
 }
 
 #container-buttons-dialog button {
     flex: 1;
     min-width: 100px;
-    height: 30px;
+    height: 35px;
     font-size: 1rem;
     border: none;
     font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
+    border-radius: 10px;
 }
 
 #btn-logout-dialog {
-    background-color: #323841;
+    background: linear-gradient(135deg, #323841, #1f242a);
     color: white;
 }
 
 #btn-cancel-dialog {
-    background-color: red;
+    background: linear-gradient(135deg, #ff4e50, #f40000);
     color: white;
 }
 
 #btn-logout-dialog:hover {
-    background-color: black;
+    background: black;
+    transform: scale(1.05);
 }
 
 #btn-cancel-dialog:hover {
-    background-color: rgb(182, 7, 7);
+    background: #c20000;
+    transform: scale(1.05);
 }
 
 dialog::backdrop {
     background: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(200px);
-    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
 }
 
-.active {
-    background-color: black;
-    color: white;
+/* Animación suave al abrir dialog */
+@keyframes scaleFade {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
 }
 
 /* ===================== */
 /*   RESPONSIVIDAD       */
 /* ===================== */
-
-/* Tablets */
 @media (max-width: 768px) {
     #section-name {
         font-size: 1rem;
     }
 
     #btn-logout {
-        padding: 8px;
+        padding: 8px 14px;
         font-size: 0.95rem;
     }
 
@@ -219,16 +274,16 @@ dialog::backdrop {
     }
 }
 
-/* Móviles */
 @media (max-width: 480px) {
     #section-info {
         flex-direction: column;
         align-items: flex-start;
+        gap: 10px;
     }
 
     nav {
         flex-direction: column;
-        row-gap: 8px;
+        row-gap: 10px;
     }
 
     .buttons-nav {

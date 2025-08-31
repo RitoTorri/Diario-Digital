@@ -12,162 +12,207 @@ body {
     justify-content: center;
     align-items: center;
     padding: 10px;
+    background: linear-gradient(135deg, #ece9e6, #ffffff);
+    color: #222;
 }
 
 main {
-    padding: 10px;
+    padding: 15px;
     width: 50%;
-    height: 80%;
-    border: 1px solid black;
+    min-width: 300px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     display: flex;
     flex-direction: column;
-    row-gap: 10px;
-    min-width: 300px; /* evita que se vuelva demasiado estrecho */
+    row-gap: 15px;
 }
 
-/* Elementos abuelos */
+/* ===================== */
+/*      HEADER USER      */
+/* ===================== */
 #section-info {
     width: 100%;
     display: flex;
     align-items: center;
     flex-direction: row;
-    column-gap: 10px;
+    column-gap: 15px;
+    padding: 10px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
-#section-post {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    row-gap: 10px;
-}
-
-#section-buttons {
-    display: flex;
-    justify-content: flex-end;
-    column-gap: 10px;
-}
-
-/* Elementos padres */
-#container-title-post {
-    width: 100%;
-}
-
-#container-content-post {
-    width: 100%;
-}
-
-/* Elementos hijos */
 #icon-user {
     width: 50px;
     height: 50px;
     border-radius: 50%;
+    border: 2px solid #323841;
+    object-fit: cover;
+    background: #f5f5f5;
+}
+
+#container-data {
+    display: flex;
+    flex-direction: column;
+}
+
+#paragraph-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #323841;
+}
+
+#paragraph-email {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* ===================== */
+/*       FORM POST       */
+/* ===================== */
+#section-post {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 12px;
 }
 
 #container-title-post input {
     width: 100%;
-    height: 40px;
-    color: white;
-    padding: 15px;
+    height: 45px;
+    color: #323841;
+    padding: 12px;
     font-size: 1rem;
     font-weight: bold;
-    background-color: #323841;
-    border: none;
+    background: rgba(245, 245, 245, 0.9);
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    transition: all 0.3s ease;
 }
 
 #container-title-post input::placeholder {
-    color: white;
+    color: #888;
+}
+
+#container-title-post input:focus {
+    outline: none;
+    border-color: #323841;
 }
 
 #container-content-post textarea {
-    font-size: 1rem;
-    color: black;
     width: 100%;
-    height: 150px; /* altura inicial razonable */
-    padding: 10px;
-    resize: vertical; /* permite ajuste vertical */
+    font-size: 1rem;
+    color: #323841;
+    padding: 12px;
+    resize: vertical;
+    min-height: 150px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background: rgba(245, 245, 245, 0.9);
+    transition: all 0.3s ease;
 }
 
-#paragraph-name {
-    font-size: 1.5rem;
-    font-weight: bold;
-} 
+#container-content-post textarea::placeholder {
+    color: #888;
+}
 
-#paragraph-email {
-    font-size: 1rem;
+#container-content-post textarea:focus {
+    outline: none;
+    border-color: #323841;
+}
+
+/* ===================== */
+/*      BOTONES FORM     */
+/* ===================== */
+#section-buttons {
+    display: flex;
+    justify-content: flex-end;
+    column-gap: 12px;
+    flex-wrap: wrap;
 }
 
 #section-buttons button {
-    width: 100px;
-    height: 40px;
+    width: 120px;
+    height: 45px;
     font-size: 1rem;
     border: none;
     font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 #btn-send-post {
-    background-color: #323841;
+    background: linear-gradient(135deg, #323841, #1f242a);
     color: white;
+}
+
+#btn-send-post:hover {
+    background: black;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 #btn-cancel {
-    background-color: red;
+    background: linear-gradient(135deg, #ff4e50, #f40000);
     color: white;
-}
-
-/* Efectos */
-#btn-send-post:hover {
-    background-color: black;
 }
 
 #btn-cancel:hover {
-    background-color: rgb(182, 7, 7);
+    background: #c20000;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-.error::placeholder {
-    color: red !important;
-    font-weight: bold;
-}
-
-/* Dialogs */
+/* ===================== */
+/*       DIALOGS         */
+/* ===================== */
 dialog {
-    border: 1px solid black;
-    padding: 20px;
+    border: none;
+    padding: 25px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    row-gap: 10px;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    font-size: 1.2rem;
-    word-wrap: break-word;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    row-gap: 15px;
+    border-radius: 15px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+    background: white;
     display: none;
-    max-width: 90%;
+    animation: scaleFade 0.3s ease forwards;
 }
 
-dialog #btn-ok-success,
-#btn-ok-large {
-    background-color: #323841;
-    color: white;
-    padding: 10px;
+dialog p {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #323841;
+    text-align: center;
+}
+
+dialog button {
+    padding: 10px 20px;
     font-weight: bold;
+    border-radius: 10px;
     cursor: pointer;
     border: none;
-    width: 50%;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+/* Success dialog */
+#btn-ok-success,
+#btn-ok-large {
+    background: linear-gradient(135deg, #323841, #1f242a);
+    color: white;
 }
 
 #btn-ok-success:hover,
 #btn-ok-large:hover {
-    background-color: black;
+    background: black;
+    transform: scale(1.05);
 }
 
+/* Error dialog */
 #dialog-error div {
     display: flex;
     flex-direction: row;
@@ -175,52 +220,52 @@ dialog #btn-ok-success,
     flex-wrap: wrap;
 }
 
-#dialog-error button {
-    width: 50%;
-    height: 40px;
-    font-size: 1rem;
-    border: none;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
 #btn-cancel-error {
-    background-color: red;
+    background: linear-gradient(135deg, #ff4e50, #f40000);
     color: white;
 }
 
 #btn-cancel-error:hover {
-    background-color: rgb(182, 7, 7);
+    background: #c20000;
+    transform: scale(1.05);
 }
 
 #btn-try-again {
-    background-color: #323841;
+    background: linear-gradient(135deg, #323841, #1f242a);
     color: white;
 }
 
 #btn-try-again:hover {
-    background-color: black;
+    background: black;
+    transform: scale(1.05);
+}
+
+dialog::backdrop {
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+}
+
+/* Animación dialogs */
+@keyframes scaleFade {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 /* ===================== */
-/* RESPONSIVIDAD          */
+/*   RESPONSIVIDAD       */
 /* ===================== */
-
 @media (max-width: 768px) {
     main {
         width: 70%;
         height: auto;
-    }
-
-    #container-title-post input,
-    #container-content-post textarea {
-        font-size: 0.95rem;
-        padding: 10px;
-    }
-
-    #section-buttons {
-        justify-content: center;
     }
 }
 
@@ -247,13 +292,7 @@ dialog #btn-ok-success,
         width: 100%;
     }
 
-    #container-title-post input,
     #container-content-post textarea {
-        font-size: 0.9rem;
-        padding: 8px;
-    }
-
-    #container-content-post textarea {
-        height: 120px;
+        min-height: 120px;
     }
 }

@@ -3,34 +3,41 @@
     padding: 0px;
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
+    transition: all 0.3s ease;
 }
 
 body {
     width: 100%;
-    min-height: 100vh; /* mejor que height fija */
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px; /* margen en pantallas pequeñas */
+    padding: 10px;
+    background: linear-gradient(135deg, #ece9e6, #ffffff);
+    color: #222;
 }
 
 main {
     display: flex;
     flex-direction: column;
-    row-gap: 30px;
-    padding: 20px;
+    row-gap: 25px;
+    padding: 25px 30px;
     border: 1px solid #323841;
-    border-radius: 20px;
-    max-width: 450px; /* límite en desktop */
+    border-radius: 15px;
+    max-width: 450px;
     width: 100%;
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 #section-title {
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1.7rem;
+    font-weight: bold;
+    color: #323841;
 }
 
-#section-form form{
+#section-form form {
     display: flex;
     flex-direction: column;
     row-gap: 15px;
@@ -38,11 +45,19 @@ main {
 
 input {
     font-size: 1rem;
-    padding: 8px;
-    background-color: transparent;
-    border-radius: 5px;
+    padding: 12px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
     border: 1px solid #323841;
     width: 100%;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: #323841;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
 }
 
 #container-error {
@@ -60,124 +75,146 @@ span {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    row-gap: 5px;
+    row-gap: 8px;
 }
 
 #container-buttons a {
-    font-size: 1rem;
-    color: #0097b2;
+    font-size: 0.95rem;
+    color: #323841;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+#container-buttons a:hover {
+    color: black;
+    text-decoration: underline;
 }
 
 #btn-register {
-    width: 100%; /* full en móviles */
-    background-color: #0097b2;
+    width: 100%;
+    background-color: #323841;
     color: white;
     font-size: 1rem;
     border: none;
-    padding: 10px;
+    padding: 12px;
     font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-    border-radius: 5px;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    letter-spacing: 0.5px;
 }
 
 #btn-register:hover {
-    background-color: #046c7e;
+    background-color: black;
+    transform: scale(1.02);
 }
 
 .error {
     border: 1px solid red;
 }
 
-.error::placeholder{
+.error::placeholder {
     color: red;
     font-weight: bold;
 }
 
+/* Dialogo de creación */
 #dialog-creted {
-    border: 1px solid black;
-    padding: 20px;
+    border: none;
+    padding: 25px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    row-gap: 10px;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    
+    row-gap: 15px;
+    border-radius: 15px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+    background-color: white;
     font-size: 1.2rem;
     word-wrap: break-word;
-
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     display: none;
-    max-width: 90%; /* evita desbordes en móviles */
+    max-width: 90%;
+    animation: scaleFade 0.3s ease forwards;
 }
 
 #dialog-creted #message {
     font-size: 1rem;
     text-align: center;
+    color: #323841;
 }
 
 #button-signUp-dialog {
-    width: 100%; /* más cómodo en móviles */
+    width: 100%;
     max-width: 200px;
     height: 40px;
     font-size: 1rem;
-    background-color: rgb(1, 195, 37);
-    color: aliceblue;
+    background-color: #323841;
+    color: white;
     border: none;
     font-weight: bold;
     cursor: pointer;
-    transition: all 0.5s ease;
+    transition: all 0.3s ease;
     border-radius: 10px;
 }
 
 #button-signUp-dialog:hover {
-    background-color: rgb(15, 97, 23);
+    background-color: black;
+    transform: scale(1.02);
+}
+
+/* Animación Dialog */
+@keyframes scaleFade {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 /* ===================== */
 /*   RESPONSIVIDAD       */
 /* ===================== */
-
-/* Tablets */
 @media (max-width: 768px) {
     main {
         max-width: 90%;
-        padding: 15px;
+        padding: 20px;
     }
 
     #section-title {
-        font-size: 1.3rem;
+        font-size: 1.4rem;
     }
 
     #btn-register {
         font-size: 0.95rem;
-        padding: 9px;
+        padding: 10px;
     }
 }
 
-/* Móviles */
 @media (max-width: 480px) {
     main {
         row-gap: 20px;
-        padding: 12px;
+        padding: 15px;
     }
 
     #section-title {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
     }
 
     input {
         font-size: 0.9rem;
-        padding: 6px;
+        padding: 8px;
     }
 
     #btn-register {
         font-size: 0.9rem;
-        padding: 8px;
+        padding: 9px;
     }
 
     #dialog-creted {
@@ -187,5 +224,64 @@ span {
 
     #dialog-creted #message {
         font-size: 0.9rem;
+    }
+}
+
+footer {
+    width: 100%;
+    padding: 10px 20px;
+    color: #323841;
+    /* gris oscuro similar a tus textos */
+    display: flex;
+    justify-content: flex-end;
+    /* alineamos al final para que el icono quede a la derecha */
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    font-size: 0.9rem;
+    gap: 5px;
+    /* espacio pequeño entre texto y el icono */
+    z-index: 1000;
+    background: transparent;
+    /* quitamos el fondo */
+}
+
+footer a {
+    color: #4db8ff;
+    /* azulcito para el link */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #0097b2;
+    text-decoration: underline;
+}
+
+footer svg {
+    fill: #323841;
+    /* mismo color que el texto */
+    width: 20px;
+    height: 20px;
+    transition: fill 0.3s ease;
+    cursor: pointer;
+}
+
+footer svg:hover {
+    fill: #4db8ff;
+}
+
+@media (max-width: 480px) {
+    footer {
+        flex-direction: row;
+        justify-content: center;
+        font-size: 0.85rem;
+    }
+
+    footer svg {
+        width: 18px;
+        height: 18px;
     }
 }
