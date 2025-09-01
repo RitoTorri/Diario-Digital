@@ -1,5 +1,5 @@
 # Blog
-**Un espacio digital para compartir ideas, pensamientos y reflexiones. Publica tus contenidos, conecta con otros lectores y descubre perspectivas únicas. Tu blog personal donde cada idea encuentra su lugar.**  
+**Un espacio digital para compartir ideas, pensamientos y reflexiones. Tu blog personal donde cada idea encuentra su lugar.**  
 
 ---------------------------------
 
