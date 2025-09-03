@@ -17,12 +17,12 @@ Ejecuta el comando: npm i  para instalar las dependencias.
 
 # Configuracion:
 Crea un archivo .env en la raiz del proyecto, este va a tener:  
-     PORT=Puerto de ejecución
-     DB_PORT=Puerto de la base de datos
-     DB_HOST=Host de la base de datos
-     DB_USER=Usuario de la base de datos
-     DB_PASSWORD=Contraseña de la base de datos
-     DB_NAME=Nombre de la base de datos
+     PORT=Puerto de ejecución  
+     DB_PORT=Puerto de la base de datos  
+     DB_HOST=Host de la base de datos  
+     DB_USER=Usuario de la base de datos  
+     DB_PASSWORD=Contraseña de la base de datos  
+     DB_NAME=Nombre de la base de datos  
 
 OJO SOLO FUNCIONA PARA PostgreSQL, si quieres usar otro motor de base de datos tendrias que modificar el codigo.  
 
