@@ -1,5 +1,5 @@
-# Blog
-**Un espacio digital para compartir ideas, pensamientos y reflexiones. Tu blog personal donde cada idea encuentra su lugar.**  
+# Diario
+**Un espacio digital para compartir ideas, pensamientos y reflexiones. Tu diario personal donde cada idea encuentra su lugar.**  
 
 ---------------------------------
 
